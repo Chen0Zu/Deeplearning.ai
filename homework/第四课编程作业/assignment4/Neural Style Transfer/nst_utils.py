@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
 from PIL import Image
 from nst_utils import *
+import imageio
 
 import numpy as np
 import tensorflow as tf
@@ -185,4 +186,5 @@ def save_image(path, image):
     
     # Clip and Save the image
     image = np.clip(image[0], 0, 255).astype('uint8')
-    scipy.misc.imsave(path, image)
+#     scipy.misc.imsave(path, image)
+    imageio.imwrite(path, image)
